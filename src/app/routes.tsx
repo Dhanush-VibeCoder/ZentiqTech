@@ -4,26 +4,21 @@ import { CostOfLife } from "./pages/CostOfLife";
 import { Blog } from "./pages/Blog";
 import { BlogPost } from "./pages/BlogPost";
 
-export const router = createBrowserRouter(
-  [
-    {
-      path: "/",
-      Component: Home,
-    },
-    {
-      path: "/cost-of-life",
-      Component: CostOfLife,
-    },
-    {
-      path: "/blog",
-      Component: Blog,
-    },
-    {
-      path: "/blog/:id",
-      Component: BlogPost,
-    },
-  ],
+export const router = createBrowserRouter([
   {
-    basename: "/ZentiqTech/",
-  }
-);
+    path: "/",
+    Component: Home,
+  },
+  {
+    path: "/cost-of-life",
+    Component: CostOfLife,
+  },
+  {
+    path: "/blog",
+    Component: Blog,
+  },
+  {
+    path: "/blog/:id",
+    Component: BlogPost,
+  },
+]);
