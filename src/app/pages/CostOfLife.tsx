@@ -285,6 +285,11 @@ export function CostOfLife() {
               <Download className="w-5 h-5" />
               Download Now
             </button>
+            <div className="mt-4 text-sm text-muted-foreground">
+              <Link to="/cost-of-life/privacy" className="hover:text-primary transition-colors">
+                Read the Privacy Policy
+              </Link>
+            </div>
           </motion.div>
         </div>
       </section>
