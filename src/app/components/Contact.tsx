@@ -31,10 +31,10 @@ export function Contact() {
           >
             <Mail className="w-6 h-6 text-primary" />
             <a
-              href="mailto:hello@zentiqtech.com"
+              href="mailto:hellozentiqtech@gmail.com"
               className="text-xl font-semibold group-hover:text-primary transition-colors"
             >
-              hello@zentiqtech.com
+              hellozentiqtech@gmail.com
             </a>
           </motion.div>
         </motion.div>
