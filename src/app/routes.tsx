@@ -1,5 +1,6 @@
 import { createBrowserRouter } from "react-router";
 import { Home } from "./pages/Home";
+import { SmartStudentTools } from "./pages/SmartStudentTools";
 import { CostOfLife } from "./pages/CostOfLife";
 import { CostOfLifePrivacy } from "./pages/CostOfLifePrivacy";
 import { Blog } from "./pages/Blog";
@@ -9,6 +10,10 @@ export const router = createBrowserRouter([
   {
     path: "/",
     Component: Home,
+  },
+  {
+    path: "/smart-student-tools",
+    Component: SmartStudentTools,
   },
   {
     path: "/cost-of-life",

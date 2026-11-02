@@ -2,7 +2,7 @@ import { motion } from "motion/react";
 import { ArrowRight, Sparkles } from "lucide-react";
 import { Link } from "react-router";
 import { useInView } from "./useInView";
-import appIcon from "../../assets/cost-of-life/app-icon.png";
+import appIcon from "../../assets/smart-student-tools/app-icon.png";
 
 export function Products() {
   const { ref, inView } = useInView();
@@ -21,43 +21,55 @@ export function Products() {
             Focused apps for <span className="text-primary">real decisions</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Beautifully simple apps designed to help you make better decisions.
+            Beautifully simple, privacy-first tools designed to solve real problems.
           </p>
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-          {/* Cost Of Life App Card */}
+          {/* Smart Student Tools Card */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <Link to="/cost-of-life">
-              <div className="group relative glass-card p-8 transition-all duration-300 hover:-translate-y-2 h-full">
+            <Link to="/smart-student-tools">
+              <div className="group relative glass-card p-8 transition-all duration-300 hover:-translate-y-2 h-full flex flex-col justify-between">
                 <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary to-orange-300 rounded-t-2xl opacity-0 group-hover:opacity-100 transition-opacity" />
                 
-                <div className="mb-6">
-                  <div className="w-16 h-16 flex items-center justify-center mb-4">
-                    <img
-                      src={appIcon}
-                      alt="Cost Of Life app icon"
-                      className="w-12 h-12 object-contain"
-                    />
+                <div>
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="w-16 h-16 rounded-2xl bg-muted/60 p-2.5 flex items-center justify-center border border-border">
+                      <img
+                        src={appIcon}
+                        alt="Smart Student Tools app icon"
+                        className="w-full h-full object-contain"
+                      />
+                    </div>
+                    <span className="text-xs uppercase tracking-wider font-semibold px-3 py-1 rounded-full bg-primary/10 text-primary border border-primary/20">
+                      Live App
+                    </span>
                   </div>
-                  <h3 className="text-2xl font-bold mb-2">Cost Of Life</h3>
-                  <p className="text-primary text-sm font-semibold mb-4 uppercase tracking-[0.2em]">
-                    Convert prices into hours of work.
+
+                  <h3 className="text-2xl font-bold mb-2">Smart Student Tools</h3>
+                  <p className="text-primary text-sm font-semibold mb-4 uppercase tracking-[0.18em]">
+                    Academic Productivity &amp; Utilities
+                  </p>
+                  
+                  <p className="text-muted-foreground mb-6 leading-relaxed">
+                    An all-in-one suite of browser tools for college students: 75% attendance tracking, 
+                    university CGPA converter (VTU, Anna Univ, etc.), IEEE/APA citation generator, 
+                    and 100% private in-browser PDF utilities.
                   </p>
                 </div>
                 
-                <p className="text-muted-foreground mb-6 leading-relaxed">
-                  A simple way to evaluate purchases using time instead of money. See the true 
-                  cost of your spending decisions and make more mindful choices about what you buy.
-                </p>
-                
-                <div className="flex items-center gap-2 text-primary font-semibold group-hover:gap-3 transition-all">
-                  Learn More
-                  <ArrowRight className="w-5 h-5" />
+                <div className="flex items-center justify-between pt-4 border-t border-border/50 text-sm font-semibold text-primary">
+                  <span className="flex items-center gap-2 group-hover:gap-3 transition-all">
+                    Product Details
+                    <ArrowRight className="w-4 h-4" />
+                  </span>
+                  <span className="text-muted-foreground text-xs font-normal">
+                    smartstudenttools.xyz ↗
+                  </span>
                 </div>
               </div>
             </Link>
