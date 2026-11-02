@@ -7,12 +7,20 @@ import {
   FileText, 
   Calendar, 
   Calculator, 
-  Lock 
+  Lock,
+  Layers,
+  Sparkles
 } from "lucide-react";
 import { Navigation } from "../components/Navigation";
 import { Footer } from "../components/Footer";
 import appIcon from "../../assets/smart-student-tools/app-icon.png";
 import bannerImg from "../../assets/smart-student-tools/banner.png";
+
+import shotDashboards from "../../assets/smart-student-tools/shot-dashboards.jpg";
+import shotCgpa from "../../assets/smart-student-tools/shot-cgpa.jpg";
+import shotCitation from "../../assets/smart-student-tools/shot-citation.jpg";
+import shotImageTools from "../../assets/smart-student-tools/shot-image-tools.jpg";
+import shotPasteTool from "../../assets/smart-student-tools/shot-paste-tool.jpg";
 
 export function SmartStudentTools() {
   const features = [
@@ -45,6 +53,37 @@ export function SmartStudentTools() {
       icon: Zap,
       title: "100% Free & No Sign-up",
       description: "Open and use immediately on any phone, tablet, or laptop. No login wall, no paywalls, no software installation.",
+    },
+  ];
+
+  const showcaseScreenshots = [
+    {
+      title: "Academic Citation Generator",
+      tag: "Research & Seminars",
+      desc: "Instant reference formatting for IEEE, APA 7, MLA 9, and Harvard standards with real-time preview and export.",
+      src: shotCitation,
+      url: "smartstudenttools.xyz/citation-generator",
+    },
+    {
+      title: "CGPA to Percentage Converter",
+      tag: "Placements & Higher Studies",
+      desc: "Formula-accurate conversion algorithm supporting VTU, Anna Univ, CBSE, and 4.0 international scales.",
+      src: shotCgpa,
+      url: "smartstudenttools.xyz/gpa-converter",
+    },
+    {
+      title: "Browser-Based Image Suite",
+      tag: "Productivity & OCR",
+      desc: "Full suite of client-side image tools including handwritten text OCR, image-to-PDF compilation, and resize.",
+      src: shotImageTools,
+      url: "smartstudenttools.xyz/image-tools",
+    },
+    {
+      title: "Instant Clipboard Paste & Convert",
+      tag: "Fast Utilities",
+      desc: "Paste images directly with Ctrl+V and convert between PNG, JPG, WebP, AVIF, and ICO without saving to disk.",
+      src: shotPasteTool,
+      url: "smartstudenttools.xyz/paste-image",
     },
   ];
 
@@ -99,10 +138,10 @@ export function SmartStudentTools() {
                 <ExternalLink className="w-5 h-5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
               </a>
               <a
-                href="#features"
+                href="#screenshots"
                 className="btn-secondary"
               >
-                Explore Features
+                View Screenshots
               </a>
             </div>
           </motion.div>
@@ -123,8 +162,135 @@ export function SmartStudentTools() {
         </div>
       </section>
 
+      {/* Featured Main Dashboard View */}
+      <section id="screenshots" className="py-24 bg-secondary/30">
+        <div className="container mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
+          >
+            <div className="section-kicker mb-4">Visual Interface</div>
+            <h2 className="section-title mb-4">
+              Explore the <span className="text-primary">Product Experience</span>
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Clean, distraction-free dashboards engineered for students on mobile and desktop.
+            </p>
+          </motion.div>
+
+          {/* Large Hero App Preview */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="max-w-5xl mx-auto mb-16"
+          >
+            <div className="glass-card overflow-hidden border border-border shadow-2xl">
+              {/* Browser Header Bar */}
+              <div className="px-5 py-3 border-b border-border/80 bg-background/80 flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                  <div className="w-3 h-3 rounded-full bg-red-500/80" />
+                  <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
+                  <div className="w-3 h-3 rounded-full bg-green-500/80" />
+                </div>
+                <div className="text-xs text-muted-foreground font-mono bg-muted/60 px-4 py-1 rounded-full border border-border/60">
+                  smartstudenttools.xyz/overview
+                </div>
+                <div className="w-12" />
+              </div>
+              
+              <img
+                src={shotDashboards}
+                alt="Smart Student Tools Academic Dashboards Hub"
+                className="w-full h-auto object-cover"
+              />
+
+              <div className="p-6 md:p-8 bg-card/60 border-t border-border/60 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+                <div>
+                  <div className="flex items-center gap-2 text-primary font-semibold text-xs uppercase tracking-wider mb-1">
+                    <Sparkles className="w-4 h-4" />
+                    Centralized Academic Hub
+                  </div>
+                  <h3 className="text-2xl font-bold">Academic Dashboards</h3>
+                  <p className="text-muted-foreground text-sm mt-1 max-w-xl">
+                    One-click navigation across all academic modules: attendance calculators, university CGPA conversions, exam grade predictors, and arrears trackers.
+                  </p>
+                </div>
+                <a
+                  href="https://smartstudenttools.xyz"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-primary text-sm whitespace-nowrap inline-flex items-center gap-2"
+                >
+                  Open Live Hub
+                  <ExternalLink className="w-4 h-4" />
+                </a>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* 2x2 Showcase Grid */}
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            {showcaseScreenshots.map((item, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: idx * 0.1 }}
+                className="glass-card overflow-hidden border border-border group hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between"
+              >
+                {/* Browser Topbar */}
+                <div className="px-4 py-2.5 border-b border-border/80 bg-background/80 flex items-center justify-between">
+                  <div className="flex items-center gap-1.5">
+                    <div className="w-2.5 h-2.5 rounded-full bg-red-500/70" />
+                    <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/70" />
+                    <div className="w-2.5 h-2.5 rounded-full bg-green-500/70" />
+                  </div>
+                  <span className="text-[11px] text-muted-foreground font-mono truncate max-w-[200px]">
+                    {item.url}
+                  </span>
+                  <div className="w-8" />
+                </div>
+
+                <div className="overflow-hidden bg-black/40">
+                  <img
+                    src={item.src}
+                    alt={item.title}
+                    className="w-full h-auto object-cover group-hover:scale-102 transition-transform duration-500"
+                  />
+                </div>
+
+                <div className="p-6 bg-card/60 border-t border-border/60">
+                  <span className="text-[11px] uppercase tracking-wider font-semibold text-primary mb-1 block">
+                    {item.tag}
+                  </span>
+                  <h4 className="text-xl font-bold mb-2">{item.title}</h4>
+                  <p className="text-muted-foreground text-sm leading-relaxed mb-4">
+                    {item.desc}
+                  </p>
+                  <a
+                    href={`https://${item.url}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-primary text-xs font-semibold inline-flex items-center gap-1.5 hover:underline"
+                  >
+                    Try Tool Live
+                    <ExternalLink className="w-3.5 h-3.5" />
+                  </a>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Features Grid */}
-      <section id="features" className="py-24 bg-secondary/30">
+      <section id="features" className="py-24 bg-background">
         <div className="container mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -169,7 +335,7 @@ export function SmartStudentTools() {
       </section>
 
       {/* Privacy Guarantee */}
-      <section className="py-20 bg-background border-y border-border">
+      <section className="py-20 bg-secondary/30 border-y border-border">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto glass-card p-10 flex flex-col md:flex-row items-center gap-8">
             <div className="w-16 h-16 rounded-2xl bg-primary/10 text-primary flex items-center justify-center shrink-0">
@@ -219,4 +385,3 @@ export function SmartStudentTools() {
     </div>
   );
 }
-
